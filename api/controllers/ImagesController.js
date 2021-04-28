@@ -7,9 +7,38 @@
  */
 
 module.exports = {
-  // list: (req, res) => {
-  //   res.view('/pages/list');
-  // }
+  upload: function (req, res) {
+    if (req.method === "GET") {
+      return res.json({
+        status: "GET not allowed",
+      });
+    }
+    var uploadFile = req.file("image");
+    uploadFile.upload(function whenDone(err, files) {
+      if (err) console.error(err);
 
+      for (const file of files) {
+        Images.create({
+          imageUploadFileDirectory: file.fd,
+          imageUploadMime: file.type,
+          imageTitle: file.filename,
+          imageTags: ["test"],
+        }).exec(function (err) {
+          if (err) return res.serverError(err);
+        });
+      }
+      res.redirect('back')
+    });
+  },
+
+  get: function (req, res) {
+    Images.find({}).exec((err, images) => {
+      if (err) res.send(500, {error: err})
+      res.view('pages/list', {images: images})
+    })
+  },
+
+  clickButton: function () {
+    console.log("IN CLICK BUTTON")
+  }
 };
-
