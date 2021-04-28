@@ -7,7 +7,9 @@
  */
 
 module.exports = {
-  
+  // list: (req, res) => {
+  //   res.view('/pages/list');
+  // }
 
 };
 
