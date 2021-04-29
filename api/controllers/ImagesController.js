@@ -32,7 +32,7 @@ module.exports = {
           if (err) return res.serverError(err);
         });
       }
-      res.redirect('back')
+      res.redirect('/images/list')
     });
   },
 
@@ -43,7 +43,23 @@ module.exports = {
     })
   },
 
-  clickButton: function () {
-    console.log("IN CLICK BUTTON")
+  delete: function (req, res) {
+    const fs = require('fs');
+    Images.find({id:req.params.id}).exec((err, image) => {
+      Images.destroy({id:req.params.id}).exec((err) => {
+        if (err) res.send(500, {error: 'Database Error'});
+        try {
+          const uploadLocation = process.cwd() +'/assets/images/uploads/' + image[0].imageFilename;
+          const tempLocation = process.cwd() + '/.tmp/public/images/uploads/' + image[0].imageFilename;
+          fs.unlinkSync(uploadLocation);
+          fs.unlinkSync(tempLocation);
+        } catch (err) {
+          console.error(err);
+        }
+
+        res.redirect('/images/list')
+      })
+    });
+    return false
   }
 };

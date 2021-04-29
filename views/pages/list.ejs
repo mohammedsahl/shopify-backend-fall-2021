@@ -7,16 +7,22 @@
             <th>Tags</th>
             <th>Directory</th>
             <th>Image</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        <% images.forEach((image) => { %>
+        <% images.forEach((image)=> { %>
             <tr>
                 <td><%= image.id %></td>
                 <td><%= image.imageTitle %></td>
                 <td><%= image.imageTags %></td>
                 <td><%= image.imageUploadFileDirectory %></td>
                 <td><img width="150px" src="/images/uploads/<%= image.imageFilename %>"></td>
+                <td>
+                    <form action="/images/delete/<%= image.id %>" method="post">
+                        <input type="submit" value="Delete" class="btn btn-dark">
+                    </form>
+                </td>
             </tr>
         <% }) %>
     </tbody>

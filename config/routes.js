@@ -19,11 +19,12 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'GET /':                { view: 'pages/homepage' },
-  'POST /images/upload' : { controller: 'ImagesController', action: 'upload' },
-  'GET /images/upload':   { view: 'pages/upload' },
-  'GET /images/list':     { controller: 'ImagesController', action: 'get' },
-  'GET /get':             { controller: 'ImagesController', action: 'get' },
+  'GET      /':                   { view: 'pages/homepage' },
+  'GET      /images/upload':      { view: 'pages/upload' },
+  'GET      /images/list':        { controller: 'ImagesController', action: 'get' },
+  'GET      /get':                { controller: 'ImagesController', action: 'get' },
+  'POST     /images/upload' :     { controller: 'ImagesController', action: 'upload' },
+  'POST     /images/delete/:id':  { controller: 'ImagesController', action: 'delete' },
 
   /***************************************************************************
   *                                                                          *
