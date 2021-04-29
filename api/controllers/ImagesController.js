@@ -14,12 +14,13 @@ module.exports = {
       });
     }
     var uploadFile = req.file("image");
-    uploadFile.upload(function whenDone(err, files) {
+    uploadFile.upload({ dirname: '../../assets/images' }, function whenDone(err, files) {
       if (err) console.error(err);
 
       for (const file of files) {
         Images.create({
           imageUploadFileDirectory: file.fd,
+          imageFilename: file.fd.replace(/^.*[\\\/]/, ''),
           imageUploadMime: file.type,
           imageTitle: file.filename,
           imageTags: ["test"],

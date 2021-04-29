@@ -20,6 +20,12 @@ module.exports = {
       required: true
     },
 
+    imageFilename: {
+      type: 'string',
+      description: 'Image filename',
+      required: true
+    },
+
     imageUploadMime: {
       type: 'string',
       description: 'The MIME type for the uploaded image.',
