@@ -15,18 +15,17 @@ before(function (done) {
       connection: 'testdb',
       migrate: 'drop'
     },
-  }, (err) => {
-    console.log("here");
+  }, async (err) => {
     if (err) { return done(err); }
-    Images.create({
+    const image = await Images.create({
       imageUploadFileDirectory: 'Test',
       imageFilename: 'test.png',
       imageUploadMime: 'image/png',
       imageTitle: 'Test Image',
       imageTags: ["test"],
-    }).then(() => {
-      return done();
-    })
+    }).fetch();
+    this.testImageID = image.id
+    return done();
   });
 });
 

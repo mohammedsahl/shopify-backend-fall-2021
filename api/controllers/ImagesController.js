@@ -54,7 +54,6 @@ module.exports = {
           fs.unlinkSync(uploadLocation);
           fs.unlinkSync(tempLocation);
         } catch (err) {
-          console.error(err);
         }
 
         res.redirect('/images/list')
