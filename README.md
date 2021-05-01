@@ -2,12 +2,10 @@
 
 A [Sails v1](https://sailsjs.com) application
 
-1) Install all packages with `npm install`
-
-2) Start up application using `sails lift`
-
-3) Visit `https://localhost:1337`
-
-4) ???
-
-5) Profit
+# Stepssss
+ - Install all packages with `npm install`
+ - Start up application using `sails lift`
+ - Visit `https://localhost:1337`
+ - ???
+ - Profitttt
+ - Connect with me on [LinkedIn](https://linkedin.com/in/mohammed-sahl)
