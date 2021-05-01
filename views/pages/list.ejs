@@ -1,11 +1,9 @@
-<h1 class="display-4">All uploaded images</h1>
-<table class="table table-striped">
-    <thead>
+<h1 class="display-4 mb-4">All uploaded images</h1>
+<table class="table table-hover">
+    <thead class="thead-dark">
         <tr>
-            <th>#</th>
             <th>Title</th>
             <th>Tags</th>
-            <th>Directory</th>
             <th>Image</th>
             <th></th>
         </tr>
@@ -13,14 +11,12 @@
     <tbody>
         <% images.forEach((image)=> { %>
             <tr>
-                <td><%= image.id %></td>
-                <td><%= image.imageTitle %></td>
+                <td><a target="_blank" href="/images/uploads/<%= image.imageFilename %>"><%= image.imageTitle %></a></td>
                 <td><%= image.imageTags %></td>
-                <td><%= image.imageUploadFileDirectory %></td>
-                <td><img width="150px" src="/images/uploads/<%= image.imageFilename %>"></td>
+                <td><img width="100%" src="/images/uploads/<%= image.imageFilename %>"></td>
                 <td>
                     <form action="/images/delete/<%= image.id %>" method="post">
-                        <input type="submit" value="Delete" class="btn btn-dark">
+                        <input type="submit" value="🗑" class="btn btn-dark">
                     </form>
                 </td>
             </tr>
