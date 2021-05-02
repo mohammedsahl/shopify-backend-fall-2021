@@ -9,3 +9,5 @@ A [Sails v1](https://sailsjs.com) application
  - ???
  - Profitttt
  - Connect with me on [LinkedIn](https://linkedin.com/in/mohammed-sahl)
+
+PS: There's a github action setup too!
