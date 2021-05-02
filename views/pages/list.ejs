@@ -11,13 +11,13 @@
   <tbody>
     <% images.forEach((image)=> { %>
       <tr>
-        <td><a target="_blank" href="/images/uploads/<%= image.imageFilename %>">
-            <%= image.imageTitle %>
-          </a></td>
-        <td>
-          <%= image.imageTags %>
+        <td><%= image.imageTitle %></td>
+        <td><%= image.imageTags %></td>
+        <td class="w-25">
+          <a target="_blank" href="/images/uploads/<%= image.imageFilename %>">
+            <img class="img-fluid img-thumbnail" src="/images/uploads/<%= image.imageFilename %>">
+          </a>
         </td>
-        <td class="w-25"><img class="img-fluid img-thumbnail" src="/images/uploads/<%= image.imageFilename %>"></td>
         <td style="text-align:center">
           <form action="/images/delete/<%= image.id %>" method="post">
             <input type="submit" value="🗑" class="btn btn-outline-dark">
