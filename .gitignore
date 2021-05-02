@@ -124,6 +124,7 @@ nbproject
 .vscode
 .node_history
 dump.rdb
+assets/images/uploads/*
 
 npm-debug.log
 lib-cov
@@ -132,3 +133,4 @@ lib-cov
 *.out
 *.pid
 
+!/assets/images/uploads/VGhpc2lzYXRlc3RmaWxld2l0aGF2ZXJ5bG9uZ25hbWUucG5n.png
