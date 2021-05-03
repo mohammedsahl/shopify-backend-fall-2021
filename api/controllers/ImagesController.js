@@ -54,7 +54,7 @@ module.exports = {
   },
 
   get: function (req, res) {
-    query = (res && res.params && res.params.searchWord)
+    query = (res && res.query && res.query.searchWord)
       ? {
           or: [
             { filename: { contains: req.query.searchWord } },
