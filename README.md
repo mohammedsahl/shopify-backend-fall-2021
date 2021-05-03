@@ -4,6 +4,7 @@ A [Sails v1](https://sailsjs.com) application
 
 # Stepssss
  - Install [node](https://nodejs.org/en/) (if you haven't already)
+ - Install [MongoDB](https://www.mongodb.com/)
  - Install all packages with `npm install`
  - Start up application using `sails lift`
  - Visit `https://localhost:1337`
