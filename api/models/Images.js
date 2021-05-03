@@ -22,6 +22,12 @@ module.exports = {
 
     imageFilename: {
       type: 'string',
+      description: 'Image filename for db purposes',
+      required: true
+    },
+
+    filename: {
+      type: 'string',
       description: 'Image filename',
       required: true
     },

@@ -18,6 +18,7 @@ before(function (done) {
   }, async (err) => {
     if (err) { return done(err); }
     const image = await Images.create({
+      filename: 'Test',
       imageUploadFileDirectory: 'Test',
       imageFilename: 'test.png',
       imageUploadMime: 'image/png',
