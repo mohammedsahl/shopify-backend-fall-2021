@@ -18,8 +18,13 @@ describe("ImageController", function() {
       it("should get one image", (done) => {
         supertest(sails.hooks.http.app).get("/images/list").expect(200, done);
       });
+      it("should query one image", (done) => {
+        supertest(sails.hooks.http.app).get("/images/list").query({ searchWord: 'Test' })
+        .expect(200, done);
+      });
       it("should upload one image", (done) => {
         supertest(sails.hooks.http.app).post("/images/upload").send({
+          filename: "uploadtest",
           imageUploadFileDirectory: 'test Directory',
           imageFilename: 'uploadtest.png',
           imageUploadMime: 'image/png',

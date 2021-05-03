@@ -21,3 +21,7 @@ document.getElementById("customFile").addEventListener(
   },
   false
 );
+
+document.getElementById("searchWord").onkeyup = function(ev) {
+  this.setAttribute("value", ev.target.value);
+}

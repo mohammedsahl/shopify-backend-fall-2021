@@ -17,7 +17,8 @@ A [Sails v1](https://sailsjs.com) application
   - Bulk
 - DELETE images
   - One
-
+- SEARCH images
+  - from text
 ## Bugs
 - Uploaded image doesn't show up: Try refreshing the browser
 

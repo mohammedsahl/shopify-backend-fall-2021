@@ -34,6 +34,7 @@ module.exports = {
 
         // Create new image record
         Images.create({
+          filename: file.filename,
           imageUploadFileDirectory: file.fd,
           imageFilename: file.fd.replace(/^.*[\\\/]/, ''),
           imageUploadMime: file.type,
@@ -53,10 +54,20 @@ module.exports = {
   },
 
   get: function (req, res) {
-    Images.find({}).exec((err, images) => {
-      if (err) res.send(500, {error: err})
-      res.view('pages/list', {images: images})
-    })
+    query = (req && req.query && req.query.searchWord)
+      ? {
+          or: [
+            { filename: { contains: req.query.searchWord } },
+            { imageTitle: { contains: req.query.searchWord } },
+            { imageTags: { contains: req.query.searchWord } },
+          ],
+        }
+      : {};
+
+    Images.find(query).exec((err, images) => {
+      if (err) res.send(500, { error: err });
+      res.view("pages/list", { images: images });
+    });
 
     //Good practice
     return false;
