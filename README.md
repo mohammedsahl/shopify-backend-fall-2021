@@ -1,4 +1,4 @@
-# shopify-backend-fall-2021
+# [shopify-backend-fall-2021](https://docs.google.com/document/d/1ZKRywXQLZWOqVOHC4JkF3LqdpO3Llpfk_CkZPR8bjak/edit#heading=h.n7bww7g70ipk)
 
 A [Sails v1](https://sailsjs.com) application
 
@@ -11,6 +11,12 @@ A [Sails v1](https://sailsjs.com) application
 - ???
 - Profitttt
 - Connect with me on [LinkedIn](https://linkedin.com/in/mohammed-sahl)
+
+# Features implmented
+- ADD images
+  - Bulk
+- DELETE images
+  - One
 
 ## Bugs
 - Uploaded image doesn't show up: Try refreshing the browser
